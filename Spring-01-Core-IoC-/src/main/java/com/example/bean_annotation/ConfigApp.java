@@ -16,4 +16,9 @@ public class ConfigApp {
         return new PartTimeMentor();
     }
 
+    @Bean(name = "abc")
+    PartTimeMentor partTimeMentor2() {
+        return new PartTimeMentor();
+    }
+
 }

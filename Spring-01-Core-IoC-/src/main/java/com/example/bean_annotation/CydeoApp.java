@@ -13,5 +13,8 @@ public class CydeoApp {
 
         ConfigAny configAny = container.getBean(ConfigAny.class);
         System.out.println(configAny.str());
+
+        PartTimeMentor partTimeMentor = container.getBean("abc", PartTimeMentor.class);
+        partTimeMentor.createAccount();
     }
 }
