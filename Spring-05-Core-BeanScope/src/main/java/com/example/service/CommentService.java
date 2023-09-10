@@ -4,9 +4,12 @@ import com.example.model.Comment;
 import com.example.proxy.CommentNotificationProxy;
 import com.example.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Scope("prototype")
 public class CommentService {
 
     private final CommentRepository commentRepository;
@@ -15,6 +18,7 @@ public class CommentService {
     public CommentService(CommentRepository commentRepository, @Qualifier("PUSH") CommentNotificationProxy commentNotificationProxy) {
         this.commentRepository = commentRepository;
         this.commentNotificationProxy = commentNotificationProxy;
+        System.out.println("Hello");
     }
 
     public void publishComment(Comment comment) {
