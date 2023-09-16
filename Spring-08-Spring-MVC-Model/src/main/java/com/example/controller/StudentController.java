@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import com.example.model.Student;
+import net.datafaker.Faker;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +33,10 @@ public class StudentController {
         numbers.add(2);
         numbers.add(1);
         model.addAttribute("numbers", numbers);
+
+        Faker faker =  new Faker();
+        Student student = new Student(faker.idNumber().hashCode(), faker.name().firstName(), faker.name().lastName());
+        model.addAttribute("student", student);
 
         return "/student/welcome";
     }
