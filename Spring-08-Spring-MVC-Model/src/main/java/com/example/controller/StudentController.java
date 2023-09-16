@@ -5,6 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 @Controller // This tells Spring that this class is a controller
 public class StudentController {
 
@@ -13,6 +17,20 @@ public class StudentController {
 
         model.addAttribute("name", "Mustafa"); // This adds a key-value pair to the model object
         model.addAttribute("course", "Spring-MVC");
+
+        String subject = "Collections";
+        model.addAttribute("subject", subject);
+
+        // create some random studentId(0-1000) and show it in the UI
+        int studentId = new Random().nextInt(1000);
+        model.addAttribute("studentId", studentId);
+
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(4);
+        numbers.add(3);
+        numbers.add(2);
+        numbers.add(1);
+        model.addAttribute("numbers", numbers);
 
         return "/student/welcome";
     }
