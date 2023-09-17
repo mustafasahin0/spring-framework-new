@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Controller
+@Controller // This tells Spring that this class is a controller
+@RequestMapping("/mentor") // This tells Spring to map this method to the URL
 public class MentorController {
 
-    @RequestMapping("/mentor")
+    @RequestMapping("/welcome")
     public String mentor(Model model) {
 
         List<Mentor> mentorsList  = List.of(new Mentor(
@@ -22,6 +23,6 @@ public class MentorController {
 
         model.addAttribute("mentors", mentorsList);
 
-        return "/mentor/mentor-list";
+        return "mentor/mentor-list";
     }
 }
