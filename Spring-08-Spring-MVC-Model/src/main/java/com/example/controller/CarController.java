@@ -29,7 +29,7 @@ public class CarController {
         return "car/car-info";
     }
 
-    @RequestMapping("/info/{make}/{year}")
+    @RequestMapping("/info/{make}/{year}") // This tells Spring to map this method to the URL: localhost:8080/car/info/BMW/2015
     public String getCarInfo(@PathVariable String make, @PathVariable Integer year, Model model) {
         model.addAttribute("make", make); // This adds a key-value pair to the model object
         model.addAttribute("year", year); // This adds a key-value pair to the model object
