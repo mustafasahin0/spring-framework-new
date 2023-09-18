@@ -13,8 +13,8 @@ public class CarController {
     @RequestMapping("/info") // This tells Spring to map this method to the URL: localhost:8080/car/info?make=BMW
     public String carInfo(@RequestParam String make, @RequestParam Integer year, Model model) {
 
-        model.addAttribute("make", make); // This adds a key-value pair to the model object
-        model.addAttribute("year", year); // This adds a key-value pair to the model object
+        model.addAttribute("make", make); // This adds a key-value pair to the com.example.model object
+        model.addAttribute("year", year); // This adds a key-value pair to the com.example.model object
 
         return "car/car-info";
     }
@@ -23,16 +23,16 @@ public class CarController {
     @RequestMapping("/info2") // This tells Spring to map this method to the URL: localhost:8080/car/info?make=BMW
     public String carInfo2(@RequestParam(value = "make2", required = false, defaultValue = "Tesla") String make, @RequestParam Integer year, Model model) {
 
-        model.addAttribute("make2", make); // This adds a key-value pair to the model object
-        model.addAttribute("year", year); // This adds a key-value pair to the model object
+        model.addAttribute("make2", make); // This adds a key-value pair to the com.example.model object
+        model.addAttribute("year", year); // This adds a key-value pair to the com.example.model object
 
         return "car/car-info";
     }
 
     @RequestMapping("/info/{make}/{year}") // This tells Spring to map this method to the URL: localhost:8080/car/info/BMW/2015
     public String getCarInfo(@PathVariable String make, @PathVariable Integer year, Model model) {
-        model.addAttribute("make", make); // This adds a key-value pair to the model object
-        model.addAttribute("year", year); // This adds a key-value pair to the model object
+        model.addAttribute("make", make); // This adds a key-value pair to the com.example.model object
+        model.addAttribute("year", year); // This adds a key-value pair to the com.example.model object
         return "car/car-info";
     }
 }

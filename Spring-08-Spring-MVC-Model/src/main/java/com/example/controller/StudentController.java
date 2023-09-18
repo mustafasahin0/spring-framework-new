@@ -17,7 +17,7 @@ public class StudentController {
     @RequestMapping("/welcome") // This tells Spring to map this method to the URL
     public String homePage(Model model) {
 
-        model.addAttribute("name", "Mustafa"); // This adds a key-value pair to the model object
+        model.addAttribute("name", "Mustafa"); // This adds a key-value pair to the com.example.model object
         model.addAttribute("course", "Spring-MVC");
 
         String subject = "Collections";

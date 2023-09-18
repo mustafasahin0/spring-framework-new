@@ -1,7 +1,9 @@
-package repository;
+package com.example.repository;
 
-import model.Employee;
+import com.example.model.Employee;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DBEmployeeRepository implements EmployeeRepository {
 
     // Assume we are getting this data from a database
