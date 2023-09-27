@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Welcome Student</h2>
+<h2>Welcome, Student</h2>
 
 
 <!-- Displaying Value -->
@@ -15,5 +15,8 @@
 <!-- Concatenation -->
 <h2 th:text="${'Welcome: '+students.get(0).firstName}"></h2>
 
+<!-- Link -->
+<a th:href="@{https://www.google.com}">Google</a>
+
 </body>
-</html>f
+</html>
