@@ -22,7 +22,7 @@ public class Student {
     @Transient // not saved in db
     private String city;
 
-    @Column(columnDefinition = "DATE")
+    @Column(columnDefinition = "DATE") //
     private LocalDate birthDate; // Add some comment?
     @Column(columnDefinition = "TIME") // TIME is a sql type, not a java type. so we need to specify the columnDefinition to tell the db what type it is.
     private LocalTime birthTime;
