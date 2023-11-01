@@ -13,7 +13,7 @@ import java.util.Date;
 @Table(name = "employees")
 @Data
 @NoArgsConstructor
-public class Employee extends BaseEntity{
+public class Employee extends BaseEntity {
 
     private String firstName;
     private String lastName;
@@ -23,7 +23,6 @@ public class Employee extends BaseEntity{
     private int salary;
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
     @OneToOne
     @JoinColumn(name = "department_id")
     private Department department;
