@@ -1,4 +1,4 @@
-package com.repository;
+package com.example.repository;
 
 import com.example.entity.Region;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -4,16 +4,26 @@ import com.example.entity.Department;
 import com.example.entity.Employee;
 import com.example.entity.Region;
 import com.example.enums.Gender;
-import com.repository.EmployeeRepository;
+import com.example.repository.DepartmentRepository;
+import com.example.repository.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
 public class DataGenerator implements CommandLineRunner {
+
+    EmployeeRepository employeeRepository;
+    DepartmentRepository departmentRepository;
+
+    public DataGenerator(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
+        this.employeeRepository = employeeRepository;
+        this.departmentRepository = departmentRepository;
+    }
 
     @Override
     public void run(String... args) throws Exception {
@@ -40,7 +50,11 @@ public class DataGenerator implements CommandLineRunner {
         Region r5 = new Region("Central","Asia");
 
 
+        employeeList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
+        departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
 
+        employeeRepository.saveAll(employeeList);
+        departmentRepository.saveAll(departmentList);
 
     }
 }

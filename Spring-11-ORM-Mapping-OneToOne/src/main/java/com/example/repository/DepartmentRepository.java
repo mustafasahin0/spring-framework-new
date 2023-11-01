@@ -1,4 +1,4 @@
-package com.repository;
+package com.example.repository;
 
 import com.example.entity.Department;
 import jakarta.persistence.criteria.CriteriaBuilder;
