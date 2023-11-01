@@ -37,6 +37,7 @@ public class DataGenerator implements CommandLineRunner {
         Employee e4 = new Employee("Avrom", "Rowantree", null, LocalDate.of(2014,03,02) ,119764,Gender.M);
         Employee e5 = new Employee("Feliks", "Morffew", "fmorffew4@a8.net", LocalDate.of(2003,01,14), 55307,Gender.M);
 
+
         Department d1 = new Department("Sports","Outdoors");
         Department d2 = new Department("Tools","Hardware");
         Department d3 = new Department("Clothing","Home");
