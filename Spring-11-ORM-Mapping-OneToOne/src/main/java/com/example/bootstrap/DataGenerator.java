@@ -6,6 +6,7 @@ import com.example.entity.Region;
 import com.example.enums.Gender;
 import com.example.repository.DepartmentRepository;
 import com.example.repository.EmployeeRepository;
+import com.example.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,11 +20,13 @@ public class DataGenerator implements CommandLineRunner {
 
     EmployeeRepository employeeRepository;
     DepartmentRepository departmentRepository;
+    RegionRepository regionRepository;
 
 
-    public DataGenerator(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
+    public DataGenerator(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository, RegionRepository regionRepository) {
         this.employeeRepository = employeeRepository;
         this.departmentRepository = departmentRepository;
+        this.regionRepository = regionRepository;
     }
 
     @Override
@@ -31,6 +34,7 @@ public class DataGenerator implements CommandLineRunner {
 
         List<Employee> employeeList = new ArrayList<>();
         List<Department> departmentList = new ArrayList<>();
+        List<Region> regionList = new ArrayList<>();
 
         Employee e1 = new Employee("Berrie", "Manueau", "bmanueau0@dion.ne.jp", LocalDate.of(2006, 04, 20), 154864, Gender.F);
         Employee e2 = new Employee("Aeriell", "McNee", "amcnee1@google.es", LocalDate.of(2009, 01, 26), 56752, Gender.F);
@@ -57,13 +61,17 @@ public class DataGenerator implements CommandLineRunner {
         e4.setDepartment(d4);
         e5.setDepartment(d5);
 
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
 
         employeeList.addAll(Arrays.asList(e1, e2, e3, e4, e5));
         departmentList.addAll(Arrays.asList(d1, d2, d3, d4, d5));
 
         employeeRepository.saveAll(employeeList);
         departmentRepository.saveAll(departmentList);
-
-
+        regionRepository.saveAll(regionList);
     }
 }
