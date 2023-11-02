@@ -20,6 +20,7 @@ public class DataGenerator implements CommandLineRunner {
     EmployeeRepository employeeRepository;
     DepartmentRepository departmentRepository;
 
+
     public DataGenerator(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
         this.employeeRepository = employeeRepository;
         this.departmentRepository = departmentRepository;
@@ -62,6 +63,7 @@ public class DataGenerator implements CommandLineRunner {
 
         employeeRepository.saveAll(employeeList);
         departmentRepository.saveAll(departmentList);
+
 
     }
 }

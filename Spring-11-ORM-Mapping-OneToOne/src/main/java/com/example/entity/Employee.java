@@ -23,7 +23,8 @@ public class Employee extends BaseEntity {
     private int salary;
     @Enumerated(EnumType.STRING)
     private Gender gender;
-    @OneToOne
+
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "department_id")
     private Department department;
 
