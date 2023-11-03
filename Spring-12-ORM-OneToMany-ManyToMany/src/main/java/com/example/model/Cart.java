@@ -1,8 +1,6 @@
 package com.example.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,5 +13,8 @@ import java.util.List;
 public class Cart extends BaseEntity {
 
     @ManyToMany
+    @JoinTable(name = "cart_items_rel", joinColumns = @JoinColumn(name = "c_id"), inverseJoinColumns = @JoinColumn(name = "i_id"))
+    @OrderBy("id ASC")
+    @Column(nullable = false)
     private List<Item> itemList;
 }
