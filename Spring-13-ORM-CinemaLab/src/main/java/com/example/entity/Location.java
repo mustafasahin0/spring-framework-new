@@ -18,6 +18,7 @@ public class Location extends BaseEntity {
     private String postalCode;
     private String country;
     private String city;
+    private String state;
     private String address;
 
 
