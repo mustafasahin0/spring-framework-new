@@ -1,7 +1,6 @@
 package com.example.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,4 +9,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "user_account")
 public class User extends BaseEntity {
+
+    private String email;
+    private String password;
+    private String username;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_details_id")
+    private Account account;
 }
