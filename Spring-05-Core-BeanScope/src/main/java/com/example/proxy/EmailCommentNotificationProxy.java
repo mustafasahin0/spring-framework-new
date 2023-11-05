@@ -1,6 +1,6 @@
 package com.example.proxy;
 
-import com.example.model.Comment;
+import com.example.entity.Comment;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -2,8 +2,8 @@ package com.example.service;
 
 import com.example.enums.QuantityType;
 import com.example.enums.RecipeType;
-import com.example.model.Ingredient;
-import com.example.model.Recipe;
+import com.example.entity.Ingredient;
+import com.example.entity.Recipe;
 import com.example.repository.RecipeRepository;
 import net.datafaker.Faker;
 import org.springframework.stereotype.Component;

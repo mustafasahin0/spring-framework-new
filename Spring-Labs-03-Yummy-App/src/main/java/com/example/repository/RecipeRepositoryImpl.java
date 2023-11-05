@@ -1,6 +1,6 @@
 package com.example.repository;
 
-import com.example.model.Recipe;
+import com.example.entity.Recipe;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

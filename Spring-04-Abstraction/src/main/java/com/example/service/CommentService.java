@@ -1,8 +1,7 @@
 package com.example.service;
 
-import com.example.model.Comment;
+import com.example.entity.Comment;
 import com.example.proxy.CommentNotificationProxy;
-import com.example.proxy.EmailCommentNotificationProxy;
 import com.example.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

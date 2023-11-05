@@ -1,16 +1,14 @@
 package com.example.bootstrap;
 
 import com.example.enums.Status;
-import com.example.model.*;
+import com.example.entity.*;
 import com.example.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @Component
 public class DataGenerator implements CommandLineRunner {

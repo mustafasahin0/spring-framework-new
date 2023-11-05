@@ -1,7 +1,7 @@
 package com.example.repository;
 
 
-import com.example.model.Product;
+import com.example.entity.Product;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.model.Comment;
+import com.example.entity.Comment;
 import com.example.service.CommentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

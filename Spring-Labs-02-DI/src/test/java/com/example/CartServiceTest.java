@@ -1,8 +1,8 @@
 package com.example;
 
 import com.example.config.ConfigApp;
-import com.example.model.Cart;
-import com.example.model.Product;
+import com.example.entity.Cart;
+import com.example.entity.Product;
 import com.example.repository.CartRepository;
 import com.example.service.CartServiceImpl;
 import com.example.service.StockService;
@@ -14,8 +14,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
-
-import static org.mockito.Mockito.when;
 
 @RunWith( SpringRunner.class )
 @ContextConfiguration(classes = ConfigApp.class)

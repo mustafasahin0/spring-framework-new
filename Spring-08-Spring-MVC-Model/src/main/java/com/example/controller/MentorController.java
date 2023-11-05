@@ -1,8 +1,7 @@
 package com.example.controller;
 
 import com.example.enums.Gender;
-import com.example.model.Mentor;
-import net.datafaker.Faker;
+import com.example.entity.Mentor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

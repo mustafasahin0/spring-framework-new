@@ -1,6 +1,6 @@
 package com.example.repository;
 
-import com.example.model.Employee;
+import com.example.entity.Employee;
 import org.springframework.stereotype.Component;
 
 @Component

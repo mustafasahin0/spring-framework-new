@@ -1,6 +1,6 @@
 package com.example.repository;
 
-import com.example.model.Recipe;
+import com.example.entity.Recipe;
 
 public interface RecipeRepository {
 

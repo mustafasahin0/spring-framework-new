@@ -1,8 +1,7 @@
 package com.example.controller;
 
-import com.example.model.Student;
+import com.example.entity.Student;
 import net.datafaker.Faker;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

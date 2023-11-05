@@ -1,9 +1,8 @@
 package com.example.service;
 
-import com.example.model.Cart;
-import com.example.model.Product;
+import com.example.entity.Cart;
+import com.example.entity.Product;
 import com.example.repository.CartRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

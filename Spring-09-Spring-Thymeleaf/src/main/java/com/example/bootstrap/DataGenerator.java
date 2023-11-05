@@ -1,6 +1,6 @@
 package com.example.bootstrap;
 
-import com.example.model.Student;
+import com.example.entity.Student;
 import net.datafaker.Faker;
 
 import java.util.List;

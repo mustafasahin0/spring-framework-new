@@ -1,7 +1,6 @@
 package com.example.repository;
 
-import com.example.model.Product;
-import org.springframework.stereotype.Service;
+import com.example.entity.Product;
 
 public interface CartRepository {
     boolean addCartDatabase(Product product, int quantity);
