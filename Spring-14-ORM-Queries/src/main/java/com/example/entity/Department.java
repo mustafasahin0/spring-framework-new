@@ -12,12 +12,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class Department {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
+    @Id
     private String department;
     private String division;
-
-
 }
