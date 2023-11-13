@@ -40,6 +40,7 @@ public class DataGenerator implements CommandLineRunner {
 
         System.out.println("-------------------- EMPLOYEE START ----------------------");
 
+        System.out.println("getEmployeeDetail: " + employeeRepository.getEmployeeDetail());
 
         System.out.println("-------------------- EMPLOYEE END ----------------------");
 

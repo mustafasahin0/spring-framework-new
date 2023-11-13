@@ -5,9 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "employees")
@@ -24,10 +22,11 @@ public class Employee extends BaseEntity {
     private Gender gender;
     private Integer salary;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Region region;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "department")
     private Department department;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Region region;
 }
