@@ -20,12 +20,14 @@ public class Employee extends BaseEntity {
     private String email;
     @Column(columnDefinition = "DATE")
     private LocalDate hireDate;
-    private String department;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Integer salary;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department")
+    private Department department;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Region region;
-
-    private Department department;
 }
