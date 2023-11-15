@@ -1,6 +1,8 @@
 package com.example.repository;
 
 import com.example.entity.Employee;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -31,7 +33,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findByHireDateBetween(LocalDate startDate, LocalDate endDate);
 
     // Display all employees where salaries greater and equal to '' in order
-    List<Employee>  findEmployeeBySalaryIsGreaterThanEqualOrderBySalaryDesc(Integer salary);
+    List<Employee> findEmployeeBySalaryIsGreaterThanEqualOrderBySalaryDesc(Integer salary);
 
     // Display top unique 3 employees that is making less than ''
     List<Employee> findDistinctTop3BySalaryLessThan(Integer salary);
@@ -50,4 +52,44 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query("SELECT e FROM Employee  e WHERE e.email = ?1 AND e.salary = ?2")
     Employee getEmployeeDetail(String email, int salary);
- }
+
+    // Not Equal
+    @Query("SELECT e FROM Employee e WHERE e.salary <> ?1")
+    List<Employee> getEmployeeSalaryNotEqual(int salary);
+
+    // like/contains/startswith/endswith
+    @Query("SELECT e FROM Employee e WHERE e.firstName LIKE ?1")
+    List<Employee> getEmployeeFirstNameLike(String pattern);
+
+    //less than
+    @Query("SELECT e FROM Employee e WHERE e.salary < ?1")
+    List<Employee> getEmployeeSalaryLessThan(Integer salary);
+
+    //greater than
+    @Query("SELECT e FROM Employee e WHERE e.salary > ?1")
+    List<Employee> getEmployeeSalaryGreaterThan(Integer salary);
+
+    //After
+    @Query("SELECT e FROM Employee e WHERE e.hireDate > ?1")
+    List<Employee> getEmployeeHireDateAfter(LocalDate date);
+
+    //Between
+    @Query("SELECT e FROM Employee e WHERE e.salary BETWEEN ?1 AND ?2")
+    List<Employee> getEmployeeSalaryBetween(Integer salary1, Integer salary2);
+
+    //Null
+    @Query("SELECT e FROM Employee e WHERE e.email IS NULL")
+    List<Employee> getEmployeeEmailIsNull();
+
+    //Not Null
+    @Query("SELECT e FROM Employee e WHERE e.email IS NOT NULL")
+    List<Employee> getEmployeeEmailIsNotNull();
+
+    //Soring in ascending order
+    @Query("SELECT e FROM Employee e ORDER BY e.salary")
+    List<Employee> getEmployeeSalaryOrderAsc();
+
+    //Soring in descending order
+    @Query("SELECT e FROM Employee e ORDER BY e.salary DESC")
+    List<Employee> getEmployeeSalaryOrderDesc();
+}
