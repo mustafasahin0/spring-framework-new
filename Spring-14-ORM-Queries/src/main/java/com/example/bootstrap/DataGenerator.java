@@ -1,6 +1,7 @@
 package com.example.bootstrap;
 
 import com.example.entity.Department;
+import com.example.repository.CourseRepository;
 import com.example.repository.DepartmentRepository;
 import com.example.repository.EmployeeRepository;
 import com.example.repository.RegionRepository;
@@ -13,11 +14,13 @@ public class DataGenerator implements CommandLineRunner {
     private final RegionRepository regionRepository;
     private final DepartmentRepository departmentRepository;
     private final EmployeeRepository employeeRepository;
+    private final CourseRepository courseRepository;
 
-    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
+    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository, CourseRepository courseRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
         this.employeeRepository = employeeRepository;
+        this.courseRepository = courseRepository;
     }
 
     @Override
@@ -45,8 +48,15 @@ public class DataGenerator implements CommandLineRunner {
 
         System.out.println("-------------------- EMPLOYEE END ----------------------");
 
+        System.out.println("-------------------- COURSE START ----------------------");
 
+        System.out.println("-------------------------------");
+        courseRepository.findByCategory("Spring").forEach(System.out::println);
+        System.out.println("existsByName: " + courseRepository.existsByName("JavaScript for All"));
+        System.out.println("countByCategory: " + courseRepository.countByCategory("Spring"));
+        courseRepository.findByNameStartsWith("Scalable").forEach(System.out::println);
+        courseRepository.streamByCategory("Spring").forEach(System.out::println);
 
-
+        System.out.println("-------------------- COURSE END ----------------------");
     }
 }
