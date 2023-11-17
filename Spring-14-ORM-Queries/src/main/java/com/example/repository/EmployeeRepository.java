@@ -5,6 +5,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -96,4 +97,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     //
     @Query(value = "SELECT * FROM employees WHERE salary ?1", nativeQuery = true)
     List<Employee> readEmployeeDetailBySalary(Integer salary);
+
+    @Query("SELECT e FROM Employee e WHERE e.salary = :salary")
+    List<Employee> getEmployeeSalary(@Param("salary") int salary);
+
 }
