@@ -2,8 +2,10 @@ package com.example.repository;
 
 import com.example.entity.Employee;
 import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.transaction.Transactional;
 import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -100,5 +102,15 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query("SELECT e FROM Employee e WHERE e.salary = :salary")
     List<Employee> getEmployeeSalary(@Param("salary") int salary);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Employee e SET e.email = 'admin@email.com' where e.id = :id")
+    void updateEmployee(@Param("id") int id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE Employees SET email = 'admin@email.com' where id = :id", nativeQuery = true)
+    void updateEmployeeNativeQuery(@Param("id") int id);
 
 }
