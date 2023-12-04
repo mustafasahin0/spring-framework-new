@@ -14,12 +14,12 @@ public interface GenreRepository extends JpaRepository<Genre, Long> {
     // ------------------- JPQL QUERIES ------------------- //
 
     //Write a JPQL query that return all genres
-    @Query(value = "SELECT g FROM Genre g")
+    @Query("SELECT g FROM Genre g")
     List<Genre> findAllGenres();
 
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query that returns genres by containing name
-    @Query(value = "SELECT * FROM GENRE g WHERE g.name IS LIKE %:pattern%", nativeQuery = true)
+    @Query(value = "SELECT * FROM GENRE g WHERE g.name ILIKE concat('%', ?1, '%')", nativeQuery = true)
     List<Genre> getAllByNameContaining(@Param("pattern") String pattern);
 }

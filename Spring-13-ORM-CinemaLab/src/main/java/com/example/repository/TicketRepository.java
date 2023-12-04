@@ -3,14 +3,16 @@ package com.example.repository;
 import com.example.entity.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
     // ------------------- DERIVED QUERIES ------------------- //
 
     //Write a derived query to count how many tickets a user bought
-
+    int countAllByUserAccount();
     //Write a derived query to list all tickets by specific email
-
+    List<Ticket> findAllByUserAccountEmail(String email);
     //Write a derived query to count how many tickets are sold for a specific movie
 
     //Write a derived query to list all tickets between a range of dates
