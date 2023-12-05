@@ -11,20 +11,21 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
     // ------------------- DERIVED QUERIES ------------------- //
 
     //Write a derived query to read a movie with a name
-    Movie getMovieBy(String name);
+    Optional<Movie> findByName(String name);
 
     //Write a derived query to list all movies between a range of prices
     List<Movie> getAllByPriceBetween(BigDecimal price1, BigDecimal price2);
     //Write a derived query to list all movies where duration exists in the specific list of duration
     List<Movie> getMovieByDurationIn(List<Integer> duration);
     //Write a derived query to list all movies with higher than a specific release date
-    List<Movie> getAllByReleaseDateGreaterThan(LocalDate localDate);
+    List<Movie> getAllByReleaseDateAfter(LocalDate localDate);
     //Write a derived query to list all movies with a specific state and type
     List<Movie> getAllByStateAndType(String state, MovieType movieType);
     // ------------------- JPQL QUERIES ------------------- //
@@ -47,5 +48,6 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Query(value = "SELECT * FROM MOVIE WHERE DURATION IN :durationList", nativeQuery = true)
     List<Movie> getAllMoviesInDuration(@Param("durationList") List<Integer> durationList);
     //Write a native query to list the top 5 most expensive movies
-
+    @Query(value = "SELECT * FROM movie ORDER BY price DESC LIMIT 5")
+    List<Movie> top5ExpensiveMovies();
 }
