@@ -1,5 +1,6 @@
 package com.example.repository;
 
+import com.example.entity.Movie;
 import com.example.entity.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -14,7 +15,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
     //Write a derived query to list all tickets by specific email
     List<Ticket> findAllByUserAccountEmail(String email);
     //Write a derived query to count how many tickets are sold for a specific movie
-
+    int countAllByMovieCinemaMovie(Movie movie);
     //Write a derived query to list all tickets between a range of dates
 
     // ------------------- JPQL QUERIES ------------------- //
