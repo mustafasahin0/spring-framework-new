@@ -30,7 +30,9 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     List<Account> findAllByAddressStartingWith(String pattern);
 
     //Write a derived query to sort the list of accounts with age
-    List<Account> findAllByOOrderByAgeDesc();
+    default List<Account> findAllOrderByAgeDesc() {
+        return null;
+    }
     // ------------------- JPQL QUERIES ------------------- //
 
     //Write a JPQL query that returns all accounts
@@ -39,7 +41,7 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 
     //Write a JPQL query to list all admin accounts
     @Query("SELECT a FROM Account a WHERE a.role = 'ADMIN'")
-    List<Account> getAllAdmins();
+    List<Account> fetchAdminAccounts();
 
     //Write a JPQL query to sort all accounts with age
     @Query("SELECT a FROM Account a ORDER BY a.age")

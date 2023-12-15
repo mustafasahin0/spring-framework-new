@@ -35,7 +35,7 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> getAllByPriceBetweenPrices(@Param("price1") BigDecimal price1, @Param("price2") BigDecimal price2);
     //Write a JPQL query that returns all movie names
     @Query(value = "SELECT m.name FROM Movie m")
-    List<String> getAllMovieNames();
+    List<String> fetchAllMovieNames();
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query that returns a movie by name
@@ -48,6 +48,6 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Query(value = "SELECT * FROM MOVIE WHERE DURATION IN :durationList", nativeQuery = true)
     List<Movie> getAllMoviesInDuration(@Param("durationList") List<Integer> durationList);
     //Write a native query to list the top 5 most expensive movies
-    @Query(value = "SELECT * FROM movie ORDER BY price DESC LIMIT 5")
+    @Query(value = "SELECT * FROM movie ORDER BY price DESC LIMIT 5", nativeQuery = true)
     List<Movie> top5ExpensiveMovies();
 }
