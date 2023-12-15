@@ -5,19 +5,20 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
     // ------------------- DERIVED QUERIES ------------------- //
 
     //Write a derived query to read a user with an email?
-    User findByEmail(String email);
+    Optional<User> findByEmail(String email);
 
     //Write a derived query to read a user with an username?
-    User findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
     //Write a derived query to list all users that contain a specific name?
-    List<User> findAllByAccountNameContaining(String name);
+    List<User> findAllByAccountNameContaining(String username);
 
     //Write a derived query to list all users that contain a specific name in the ignore case mode?
     List<User> findAllByAccountNameContainingIgnoreCase(String name);
@@ -32,7 +33,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User listUserByEmail(String email);
     //Write a JPQL query that returns a user read by username?
 
-    @Query("SELECT u FROM User u WHERE u.userName=?1")
+    @Query("SELECT u FROM User u WHERE u.username=?1")
     User listUserName(String username);
 
     //Write a JPQL query that returns all users?
@@ -41,18 +42,18 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query that returns all users that contain a specific name?
-    @Query(value = "SELECT * FROM User u WHERE u.username ILIKE  CONCAT('%', ?1, '%')", nativeQuery = true)
+    @Query(value = "SELECT * FROM user_account u JOIN account_details ad ON u.account_details_id = ad.id WHERE ad.name ILIKE  CONCAT('%', ?1, '%')", nativeQuery = true)
     List<User> getAllUsersByName(String name);
 
     //Write a native query that returns all users?
-    @Query(value = "SELECT u FROM User u", nativeQuery = true)
+    @Query(value = "SELECT * FROM user_account", nativeQuery = true)
     List<User> listAllUsers();
 
     //Write a native query that returns all users in the range of ages?
-    @Query(value = "SELECT * FROM USER WHERE age is BETWEEN ?1 and ?2", nativeQuery = true)
+    @Query(value = "SELECT * FROM user_account JOIN account_details ad ON u.account_details_id = ad.id WHERE ad.age is BETWEEN ?1 and ?2", nativeQuery = true)
     List<User> getAllUserByAgeBetween(int age1, int age2);
     //Write a native query to read a user by email?
-    @Query(value = "SELECT * FROM USER WHERE email = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM user_account WHERE email = ?1", nativeQuery = true)
     List<User> getAllByEmail(String email);
 
 }
