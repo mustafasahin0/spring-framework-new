@@ -14,10 +14,10 @@ public class ResponseWrapper {
     private boolean success;
     private String message;
     private Integer code;
-    private Object data;
+    private  Object data;
 
-    public ResponseWrapper(String message, Object data) {
-        this.success = true;
+    public ResponseWrapper(boolean success, String message, Integer code, Object data) {
+        this.success = success;
         this.message = message;
         this.code = HttpStatus.OK.value();
         this.data = data;
@@ -28,4 +28,6 @@ public class ResponseWrapper {
         this.code = HttpStatus.OK.value();
         this.success = true;
     }
+
+
 }
