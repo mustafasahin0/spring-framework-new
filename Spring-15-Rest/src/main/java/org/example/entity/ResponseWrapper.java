@@ -4,7 +4,10 @@ package org.example.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.dto.CourseDTO;
 import org.springframework.http.HttpStatus;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,11 +26,10 @@ public class ResponseWrapper {
         this.data = data;
     }
 
-    public ResponseWrapper(String message) {
+    public ResponseWrapper(String message, Object data) {
         this.message = message;
         this.code = HttpStatus.OK.value();
         this.success = true;
+        this.data = data;
     }
-
-
 }
