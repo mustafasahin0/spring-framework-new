@@ -12,12 +12,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Table(name = "user_account")
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer"}, ignoreUnknown = true)
 public class User extends BaseEntity {
 
-//    @JsonIgnore
+    @JsonIgnore
     private String email;
-
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
@@ -27,7 +26,7 @@ public class User extends BaseEntity {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_details_id")
-    @JsonManagedReference //is the forward part of reference - the one that gets serialized normally
+    @JsonManagedReference // Serialise normally
     private Account account;
 
 }
