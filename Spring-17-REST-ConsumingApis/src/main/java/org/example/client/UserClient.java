@@ -11,5 +11,4 @@ public interface UserClient {
 
     @GetMapping("/users")
     List<User> getUsers();
-
 }
