@@ -1,8 +1,9 @@
 package org.example.repository;
 
-import com.cydeo.entity.Movie;
-import com.cydeo.enums.MovieState;
-import com.cydeo.enums.MovieType;
+
+import org.example.entity.Movie;
+import org.example.enums.MovieState;
+import org.example.enums.MovieType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
