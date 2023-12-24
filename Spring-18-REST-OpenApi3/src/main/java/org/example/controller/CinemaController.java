@@ -1,6 +1,8 @@
 package org.example.controller;
 
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.example.entity.Cinema;
 import org.example.repository.CinemaRepository;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@Tag(name = "Cinema", description = "Cinema CRUD operations")
 public class CinemaController {
 
     private final CinemaRepository cinemaRepository;
@@ -20,6 +23,7 @@ public class CinemaController {
     }
 
     @GetMapping("/cinemas")
+    @Operation(summary = "Read all cinemas")
     public List<Cinema> readAllCinemas(){
         return cinemaRepository.findAll();
     }
