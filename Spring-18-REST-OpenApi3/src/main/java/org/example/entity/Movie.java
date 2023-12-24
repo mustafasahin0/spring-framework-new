@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.example.enums.MovieState;
 import org.example.enums.MovieType;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;

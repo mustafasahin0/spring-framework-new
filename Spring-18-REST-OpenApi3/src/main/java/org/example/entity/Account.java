@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.enums.UserRole;
 
+import javax.persistence.*;
+
 
 @Entity
 @Getter
