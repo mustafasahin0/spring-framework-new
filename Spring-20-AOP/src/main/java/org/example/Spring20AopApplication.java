@@ -1,5 +1,6 @@
 package org.example;
 
+
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +14,7 @@ public class Spring20AopApplication {
     }
 
     @Bean
-    public ModelMapper mapper() {
+    public ModelMapper modelMapper() {
         return new ModelMapper();
     }
 

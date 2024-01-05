@@ -15,7 +15,7 @@ public class CourseController {
 
     private final CourseService courseService;
 
-    //Logger logger = LoggerFactory.getLogger(CourseController.class);
+    Logger logger = LoggerFactory.getLogger(CourseController.class);
 
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
@@ -24,9 +24,9 @@ public class CourseController {
     @GetMapping
     public List<CourseDTO> getAllCourses() {
 
-       // logger.info("Before -> Controller: {} - Method {} "," CourseController","getCourses()");
+        logger.info("Before -> Controller: {} - Method {}", "CourseController", "getAllCourses()");
         List<CourseDTO> list = courseService.getCourses();
-      //  logger.info("After -> Controller: {} - Method : {} - Output : {}"," CourseController","getCourses()", list.toString());
+        logger.info("After -> Controller: {} - Method {} - Output : {}", "CourseController", "getAllCourses()", list.toString());
         return list;
     }
 
@@ -38,7 +38,7 @@ public class CourseController {
 
     @GetMapping("/category/{name}")
     public List<CourseDTO> getCourseByCategory(@PathVariable("name") String category) {
-        return courseService.getCoursesByCategory(category)       ;
+        return courseService.getCoursesByCategory(category);
     }
 
 
