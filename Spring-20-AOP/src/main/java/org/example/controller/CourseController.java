@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.annotation.Loggable;
 import org.example.dto.CourseDTO;
 import org.example.service.CourseService;
 import org.slf4j.Logger;
@@ -24,13 +25,14 @@ public class CourseController {
     @GetMapping
     public List<CourseDTO> getAllCourses() {
 
-        logger.info("Before -> Controller: {} - Method {}", "CourseController", "getAllCourses()");
+//        logger.info("Before -> Controller: {} - Method {}", "CourseController", "getAllCourses()");
         List<CourseDTO> list = courseService.getCourses();
-        logger.info("After -> Controller: {} - Method {} - Output : {}", "CourseController", "getAllCourses()", list.toString());
+//        logger.info("After -> Controller: {} - Method {} - Output : {}", "CourseController", "getAllCourses()", list.toString());
         return list;
     }
 
 
+    @Loggable()
     @GetMapping("/{id}")
     public CourseDTO getCourseById(@PathVariable("id") Long courseId) {
         return courseService.getCourseById(courseId);
@@ -42,6 +44,7 @@ public class CourseController {
     }
 
 
+    @Loggable()
     @PostMapping
     public CourseDTO createCourse(@RequestBody CourseDTO course) {
         return courseService.createCourse(course);
