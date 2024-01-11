@@ -1,7 +1,8 @@
 package org.example.mapper;
 
-import com.cydeo.dto.UserDTO;
-import com.cydeo.entity.User;
+
+import org.example.dto.UserDTO;
+import org.example.entity.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ public class UserMapper {
         this.modelMapper = modelMapper;
     }
 
-   public  User convertToEntity(UserDTO dto){
+   public User convertToEntity(UserDTO dto){
         return modelMapper.map(dto,User.class);
     }
 

@@ -1,7 +1,8 @@
 package org.example.repository;
 
-import com.cydeo.entity.Project;
-import com.cydeo.entity.User;
+
+import org.example.entity.Project;
+import org.example.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

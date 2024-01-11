@@ -1,9 +1,9 @@
 package org.example.service.impl;
 
-import com.cydeo.dto.RoleDTO;
-import com.cydeo.mapper.MapperUtil;
-import com.cydeo.mapper.RoleMapper;
-import com.cydeo.repository.RoleRepository;
+import org.example.dto.RoleDTO;
+import org.example.mapper.MapperUtil;
+import org.example.mapper.RoleMapper;
+import org.example.repository.RoleRepository;
 import org.example.service.RoleService;
 import org.springframework.stereotype.Service;
 

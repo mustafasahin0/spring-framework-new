@@ -1,7 +1,9 @@
 package org.example.service;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.entity.User;
+
+
+import org.example.dto.ProjectDTO;
+import org.example.entity.User;
 
 import java.util.List;
 

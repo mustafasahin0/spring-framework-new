@@ -1,14 +1,15 @@
 package org.example.service.impl;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.dto.TaskDTO;
-import com.cydeo.entity.Task;
-import com.cydeo.entity.User;
-import com.cydeo.enums.Status;
-import com.cydeo.mapper.ProjectMapper;
-import com.cydeo.mapper.TaskMapper;
-import com.cydeo.repository.TaskRepository;
-import com.cydeo.repository.UserRepository;
+
+import org.example.dto.ProjectDTO;
+import org.example.dto.TaskDTO;
+import org.example.entity.Task;
+import org.example.entity.User;
+import org.example.enums.Status;
+import org.example.mapper.ProjectMapper;
+import org.example.mapper.TaskMapper;
+import org.example.repository.TaskRepository;
+import org.example.repository.UserRepository;
 import org.example.service.TaskService;
 import org.springframework.stereotype.Service;
 

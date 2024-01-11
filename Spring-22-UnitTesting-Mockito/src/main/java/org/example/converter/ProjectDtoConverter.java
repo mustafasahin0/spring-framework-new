@@ -1,7 +1,8 @@
 package org.example.converter;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.service.ProjectService;
+
+import org.example.dto.ProjectDTO;
+import org.example.service.ProjectService;
 import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.convert.converter.Converter;

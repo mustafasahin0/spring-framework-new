@@ -1,8 +1,9 @@
 package org.example.entity;
 
-import com.cydeo.enums.Gender;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.enums.Gender;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;

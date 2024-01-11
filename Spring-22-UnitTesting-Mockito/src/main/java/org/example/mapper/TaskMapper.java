@@ -1,7 +1,8 @@
 package org.example.mapper;
 
-import com.cydeo.dto.TaskDTO;
-import com.cydeo.entity.Task;
+
+import org.example.dto.TaskDTO;
+import org.example.entity.Task;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

@@ -1,8 +1,9 @@
 package org.example.controller;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.service.ProjectService;
-import com.cydeo.service.UserService;
+
+import org.example.dto.ProjectDTO;
+import org.example.service.ProjectService;
+import org.example.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

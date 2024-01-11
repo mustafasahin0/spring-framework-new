@@ -1,10 +1,11 @@
 package org.example.entity;
 
 
-import com.cydeo.enums.Status;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.enums.Status;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;

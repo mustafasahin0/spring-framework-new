@@ -1,8 +1,9 @@
 package org.example.dto;
 
-import com.cydeo.enums.Status;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.enums.Status;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

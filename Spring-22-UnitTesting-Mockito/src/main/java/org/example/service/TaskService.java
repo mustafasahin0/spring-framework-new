@@ -1,9 +1,11 @@
 package org.example.service;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.dto.TaskDTO;
-import com.cydeo.entity.User;
-import com.cydeo.enums.Status;
+
+
+import org.example.dto.ProjectDTO;
+import org.example.dto.TaskDTO;
+import org.example.entity.User;
+import org.example.enums.Status;
 
 import java.util.List;
 

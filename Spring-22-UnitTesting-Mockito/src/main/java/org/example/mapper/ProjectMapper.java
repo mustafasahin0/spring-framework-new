@@ -1,7 +1,7 @@
 package org.example.mapper;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.entity.Project;
+import org.example.dto.ProjectDTO;
+import org.example.entity.Project;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

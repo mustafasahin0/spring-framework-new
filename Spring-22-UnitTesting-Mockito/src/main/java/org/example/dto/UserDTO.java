@@ -1,9 +1,10 @@
 package org.example.dto;
 
-import com.cydeo.enums.Gender;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.example.enums.Gender;
 
 import javax.validation.constraints.*;
 

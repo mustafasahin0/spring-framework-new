@@ -1,13 +1,14 @@
 package org.example.service.impl;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.dto.UserDTO;
-import com.cydeo.entity.Project;
-import com.cydeo.entity.User;
-import com.cydeo.enums.Status;
-import com.cydeo.mapper.ProjectMapper;
-import com.cydeo.mapper.UserMapper;
-import com.cydeo.repository.ProjectRepository;
+
+import org.example.dto.ProjectDTO;
+import org.example.dto.UserDTO;
+import org.example.entity.Project;
+import org.example.entity.User;
+import org.example.enums.Status;
+import org.example.mapper.ProjectMapper;
+import org.example.mapper.UserMapper;
+import org.example.repository.ProjectRepository;
 import org.example.service.ProjectService;
 import org.example.service.TaskService;
 import org.example.service.UserService;
