@@ -9,4 +9,3 @@ WORKDIR /user/app
 
 # will provide executable application when container starts the run
 ENTRYPOINT ["java", "-jar", "Spring-24-Docker-0.0.1-SNAPSHOT.jar"]
-
